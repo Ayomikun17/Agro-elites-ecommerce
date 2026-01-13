@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Shop Products Column - UPDATED LINKS */}
+          {/* Shop Products Column - ALL LINKED TO #PRODUCTS */}
           <div>
             <h4 className="text-[15px] font-black uppercase tracking-widest mb-7 text-agro-yellow">
               Shop Products
@@ -83,7 +83,7 @@ const Footer = () => {
               {shopCategories.map((cat) => (
                 <li key={cat.slug}>
                   <a
-                    href={`#${cat.slug}`}
+                    href="#products"
                     className="hover:text-agro-yellow transition-all capitalize block"
                   >
                     {cat.name}
