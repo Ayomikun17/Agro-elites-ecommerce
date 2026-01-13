@@ -201,7 +201,7 @@ const ProductsPage = () => {
   const activeCategoryList = activeCategory === 'All' ? categoryData.filter(c => c.name !== 'All') : categoryData.filter(c => c.name === activeCategory);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-16 px-6">
+    <div id="products" className="bg-gray-50 min-h-screen py-16 px-6">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -251,7 +251,7 @@ const ProductsPage = () => {
             if (categoryProducts.length === 0) return null;
 
             return (
-              <div key={cat.name} className="animate-in fade-in slide-in-from-bottom-6 duration-700">
+              <div id={cat.name} key={cat.name} className="animate-in fade-in slide-in-from-bottom-6 duration-700">
                 <div className="flex items-center gap-6 mb-10">
                   <h2 className="text-3xl font-black text-agro-charcoal tracking-tight">{cat.name}</h2>
                   <div className="h-px bg-gray-200 w-full hidden md:block"></div>

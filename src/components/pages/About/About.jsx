@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Farmer from "../../../assets/farmer.jpg"
-import Catfish from "../../../assets/catfish2.png"
-import Poultry from "../../../assets/poultry2.jpg"
-import Crops from "../../../assets/crops.jpg"
-import Cows from "../../../assets/cows2.jpg"
-import Feed from "../../../assets/feed.png"
-import Tractor from "../../../assets/tractor.jpg"
-import FreshCrops from "../../../assets/fresh-crops.jpg"
-import ContactUs from "../../../assets/contact.jpg"
-
+import Farmer from "../../../assets/farmer.jpg";
+import Catfish from "../../../assets/catfish2.png";
+import Poultry from "../../../assets/poultry2.jpg";
+import Crops from "../../../assets/crops.jpg";
+import Cows from "../../../assets/cows2.jpg";
+import Feed from "../../../assets/feed.png";
+import Tractor from "../../../assets/tractor.jpg";
+import FreshCrops from "../../../assets/fresh-crops.jpg";
+import ContactUs from "../../../assets/contact.jpg";
 
 const About = () => {
   useEffect(() => {
@@ -47,11 +46,8 @@ const About = () => {
 
   return (
     <main className="bg-white font-sans overflow-x-hidden">
-      {/* SECTION 1: OUR STORY & VALUES */}
-      <section
-        id="our-story"
-        className="py-20 lg:py-28 bg-white overflow-hidden"
-      >
+      {/* SECTION 1: OUR STORY & VALUES - Added id="about" */}
+      <section id="about" className="py-20 lg:py-28 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:pl-20 lg:pr-12">
           <div className="grid lg:grid-cols-5 gap-16 lg:gap-24 items-center">
             <div className="lg:col-span-3" data-aos="fade-right">
@@ -102,13 +98,11 @@ const About = () => {
 
             <div className="lg:col-span-2 relative" data-aos="zoom-in-left">
               <div className="absolute -inset-6 bg-agro-green/5 blur-3xl rounded-full -z-10 animate-pulse"></div>
-              {/* <img
-                src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1200&auto=format&fit=crop"
+              <img
+                src={Farmer}
                 className="rounded-[2.5rem] shadow-xl h-[400px] lg:h-[550px] w-full object-cover transform transition-transform duration-700 hover:scale-105"
-                alt="Modern Farmer"
-              /> */}
-
-              <img src={Farmer} className="rounded-[2.5rem] shadow-xl h-[400px] lg:h-[550px] w-full object-cover transform transition-transform duration-700 hover:scale-105" alt="African Farmer" />
+                alt="African Farmer"
+              />
             </div>
           </div>
         </div>
@@ -157,33 +151,35 @@ const About = () => {
                     both smart and super-efficient.
                   </p>
                 </div>
-              </div> 
+              </div>
 
               <div className="pt-4" data-aos="zoom-in">
-                <button className="bg-agro-yellow hover:bg-agro-charcoal text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-3 group">
-                  <span>SHOP NOW</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 transition-transform group-hover:translate-x-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
-                  </svg>
-                </button>
+                <a href="#products">
+                  <button className="bg-agro-yellow hover:bg-agro-charcoal text-white px-8 py-3 rounded-full font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-3 group">
+                    <span>SHOP NOW</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 transition-transform group-hover:translate-x-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </button>
+                </a>
               </div>
             </div>
 
             <div className="lg:col-span-2 relative" data-aos="fade-left">
               <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-200">
                 <img
-                  src= {FreshCrops}
+                  src={FreshCrops}
                   alt="Agro-Elites Farm View"
                   className="w-full h-[500px] lg:h-[600px] object-cover hover:scale-110 transition-transform duration-1000"
                 />
@@ -207,7 +203,6 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-            {/* Card Content (Repeated Structure) */}
             {[
               {
                 title: "Aquaculture",
@@ -224,7 +219,7 @@ const About = () => {
               {
                 title: "Crops",
                 color: "agro-green",
-                img: Crops ,
+                img: Crops,
                 desc: "Large-scale seasonal cultivation of maize and soybeans, forming the backbone of our integrated feed system.",
               },
               {
@@ -274,7 +269,6 @@ const About = () => {
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:pl-20 lg:pr-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image Side with Floating Elements */}
             <div className="relative order-2 lg:order-1" data-aos="fade-right">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-agro-yellow/20 rounded-full blur-2xl animate-pulse"></div>
               <img
@@ -282,7 +276,6 @@ const About = () => {
                 className="rounded-[2.5rem] shadow-xl h-[400px] lg:h-[550px] w-full object-cover transform transition-transform duration-700 hover:scale-105"
                 alt="Modern Farmer"
               />
-              {/* Quality Badge */}
               <div className="absolute bottom-6 right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100 animate-bounce-slow">
                 <div className="bg-agro-green p-2 rounded-full text-white">
                   <svg
@@ -309,7 +302,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Content Side */}
             <div className="order-1 lg:order-2" data-aos="fade-left">
               <h2 className="text-agro-green font-bold tracking-[0.3em] uppercase text-sm mb-4">
                 Your Health First
@@ -351,11 +343,9 @@ const About = () => {
       </section>
 
       {/* SECTION 6: COMMUNITY & SUPPLY */}
-      {/* SECTION 6: COMMUNITY & SUPPLY */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:pl-20 lg:pr-12">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* LEFT COLUMN: CONTENT */}
             <div data-aos="fade-right">
               <h2 className="text-agro-green font-bold tracking-[0.3em] uppercase text-sm mb-4">
                 Our Ecosystem
@@ -377,38 +367,32 @@ const About = () => {
               </p>
             </div>
 
-            {/* RIGHT COLUMN: DETAILED NIGERIA STATE MAP */}
             <div
               className="relative flex justify-center items-center"
               data-aos="zoom-in"
             >
               <div className="relative w-full max-w-lg shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
-                {/* Detailed Map Image */}
                 <img
                   src="https://www.mapsofworld.com/nigeria/maps/nigeria-political-map.jpg"
                   alt="Detailed Political Map of Nigeria"
                   className="w-full h-auto object-cover"
                 />
 
-                {/* ABUJA PIN - Located in the FCT (Center) */}
                 <div className="absolute top-[44%] left-[45%] group cursor-pointer">
                   <div className="absolute -inset-3 bg-agro-yellow/40 rounded-full animate-ping"></div>
                   <div className="relative bg-agro-yellow w-5 h-5 rounded-full border-2 border-white shadow-xl flex items-center justify-center">
                     <div className="w-1.5 h-1.5 bg-agro-charcoal rounded-full"></div>
                   </div>
-                  {/* Tooltip */}
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-agro-charcoal text-white text-[10px] px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap font-black uppercase tracking-widest shadow-2xl z-20">
                     Abuja Hub
                   </div>
                 </div>
 
-                {/* NASARAWA PIN - Adjacent to Abuja to the East */}
                 <div className="absolute top-[46%] left-[54%] group cursor-pointer">
                   <div className="absolute -inset-3 bg-agro-green/40 rounded-full animate-ping delay-500"></div>
                   <div className="relative bg-agro-green w-5 h-5 rounded-full border-2 border-white shadow-xl flex items-center justify-center">
                     <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                   </div>
-                  {/* Tooltip */}
                   <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-agro-charcoal text-white text-[10px] px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap font-black uppercase tracking-widest shadow-2xl z-20">
                     Nasarawa Farms
                   </div>
@@ -419,12 +403,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact us */}
-
-      <section className="py-24 bg-gray-50 px-6">
+      {/* SECTION: CONTACT US - Added id="contact" */}
+      <section id="contact" className="py-24 bg-gray-50 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* LEFT COLUMN: FORM */}
             <div
               className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-gray-100"
               data-aos="fade-right"
@@ -499,19 +481,15 @@ const About = () => {
               </form>
             </div>
 
-            {/* RIGHT COLUMN: IMAGE & ICON CARDS */}
             <div className="space-y-6" data-aos="fade-left">
-              {/* Contact Image */}
               <div className="rounded-[2.5rem] overflow-hidden h-[340px] shadow-xl border-4 border-white">
                 <img
-                  src= {ContactUs}
+                  src={ContactUs}
                   alt="Agro-Elites Farmer"
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Email Card */}
-              {/* Email Card */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-5 hover:border-agro-green/30 transition-colors">
                 <div className="w-12 h-12 bg-agro-green/10 rounded-xl flex items-center justify-center text-agro-green flex-shrink-0">
                   <svg
@@ -530,13 +508,11 @@ const About = () => {
                   </svg>
                 </div>
 
-                {/* Added lg:flex, items-center, and justify-between to this wrapper */}
                 <div className="flex-1 lg:flex lg:items-center lg:justify-between lg:gap-6">
                   <div>
                     <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">
                       Email Us
                     </p>
-                    {/* Changed mb-4 to lg:mb-0 so it doesn't push the button down on large screens */}
                     <p className="text-agro-charcoal font-bold mb-4 lg:mb-0">
                       agro.elitesfarms@gmail.com
                     </p>
@@ -551,7 +527,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* WhatsApp/Phone Card */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex flex-col sm:flex-row justify-between items-center gap-6 hover:border-agro-green/30 transition-colors">
                 <div className="flex items-start gap-5 w-full">
                   <div className="w-12 h-12 bg-agro-yellow/10 rounded-xl flex items-center justify-center text-agro-yellow flex-shrink-0">
@@ -592,7 +567,6 @@ const About = () => {
                 </a>
               </div>
 
-              {/* Address Card */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-5 hover:border-agro-green/30 transition-colors">
                 <div className="w-12 h-12 bg-agro-charcoal/10 rounded-xl flex items-center justify-center text-agro-charcoal flex-shrink-0">
                   <svg

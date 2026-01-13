@@ -9,3 +9,7 @@
   /* You can also define custom fonts here if needed */
   --font-brand: "Montserrat", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
