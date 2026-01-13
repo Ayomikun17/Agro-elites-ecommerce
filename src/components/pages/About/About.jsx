@@ -7,6 +7,10 @@ import Poultry from "../../../assets/poultry2.jpg"
 import Crops from "../../../assets/crops.jpg"
 import Cows from "../../../assets/cows2.jpg"
 import Feed from "../../../assets/feed.png"
+import Tractor from "../../../assets/tractor.jpg"
+import FreshCrops from "../../../assets/fresh-crops.jpg"
+import ContactUs from "../../../assets/contact.jpg"
+
 
 const About = () => {
   useEffect(() => {
@@ -179,7 +183,7 @@ const About = () => {
             <div className="lg:col-span-2 relative" data-aos="fade-left">
               <div className="rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-200">
                 <img
-                  src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop"
+                  src= {FreshCrops}
                   alt="Agro-Elites Farm View"
                   className="w-full h-[500px] lg:h-[600px] object-cover hover:scale-110 transition-transform duration-1000"
                 />
@@ -274,7 +278,7 @@ const About = () => {
             <div className="relative order-2 lg:order-1" data-aos="fade-right">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-agro-yellow/20 rounded-full blur-2xl animate-pulse"></div>
               <img
-                src="https://images.unsplash.com/photo-1589923188900-85dae523342b?q=80&w=1200&auto=format&fit=crop"
+                src={Tractor}
                 className="rounded-[2.5rem] shadow-xl h-[400px] lg:h-[550px] w-full object-cover transform transition-transform duration-700 hover:scale-105"
                 alt="Modern Farmer"
               />
@@ -500,7 +504,7 @@ const About = () => {
               {/* Contact Image */}
               <div className="rounded-[2.5rem] overflow-hidden h-[340px] shadow-xl border-4 border-white">
                 <img
-                  src="https://images.unsplash.com/photo-1595113316349-9fa4ee24f884?q=80&w=1200&auto=format&fit=crop"
+                  src= {ContactUs}
                   alt="Agro-Elites Farmer"
                   className="w-full h-full object-cover"
                 />

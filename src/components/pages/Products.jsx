@@ -1,4 +1,17 @@
 import React, { useState } from 'react';
+import SmokedFish from "../../assets/smokedfish.png"
+import TableCatFish from "../../assets/tablesizeCatfish.png"
+import CatFishJuveniles from "../../assets/fingerling.png"
+import CatFishBroodstock from "../../assets/catfish2.png"
+import FrozenChicken from "../../assets/frozenchicken.png"
+import Feeds from "../../assets/feed.png"
+import SeasonalMaize from "../../assets/seasonalMaize.png"
+import ButcheredGoat from "../../assets/butcheredGoat.png"
+import Poultry from "../../assets/poultry2.jpg"
+import Aqualculture from "../../assets/aqualculture.jpg"
+import Feed from "../../assets/feed.png"
+import Protein from "../../assets/protein.jpg"
+import Maize from "../../assets/maize.jpg"
 
 // Manual SVG Icons for UI Elements (No external dependencies)
 const Icons = {
@@ -24,31 +37,31 @@ const ProductsPage = () => {
     },
     { 
       name: 'Aquaculture', 
-      image: 'https://images.unsplash.com/photo-1514944651163-f272645f867c?q=80&w=200', 
+      image: Aqualculture, 
       bgColor: 'bg-[#E0F7FA]', // Light Cyan
       desc: 'Catfish & Juveniles' 
     },
     { 
       name: 'Poultry', 
-      image: 'https://images.unsplash.com/photo-1606728035253-49e196711486?q=80&w=200', 
+      image: Poultry, 
       bgColor: 'bg-[#FFF3E0]', // Light Orange
       desc: 'Dressed Chicken' 
     },
     { 
       name: 'Protein', 
-      image: 'https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=200', 
+      image: Protein, 
       bgColor: 'bg-[#FFFDE7]', // Light Yellow
       desc: 'Goat & Beef' 
     },
     { 
       name: 'Crops', 
-      image: 'https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=200', 
+      image: Maize, 
       bgColor: 'bg-[#F3E5F5]', // Light Purple
       desc: 'Maize & Seasonal' 
     },
     { 
       name: 'Feeds', 
-      image: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=200', 
+      image: Feed, 
       bgColor: 'bg-[#E8EAF6]', // Light Indigo
       desc: 'Formulations' 
     }
@@ -60,7 +73,7 @@ const ProductsPage = () => {
       name: "Smoked Catfish (1 kg)",
       price: "₦16,000 per kg",
       category: "Aquaculture",
-      image: "https://images.unsplash.com/photo-1599056377758-69022728989f?q=80&w=500",
+      image: SmokedFish,
       shortDesc: "Rich, ready‑to‑eat smoked catfish, produced to NAFDAC specifications and export‑ready—carefully processed for hygiene and long‑lasting flavour.",
       fullDesc: "Our smoked catfish is crafted from carefully selected, farm‑raised fish and smoked to a clean, aromatic finish. Vacuum‑sealing and proper drying help maintain quality and shelf life. Perfect for soups, stews, sauces, and snacks, with authentic flavour you can trust at home and abroad.",
       highlights: ["NAFDAC‑spec, export‑ready processing", "Clean, consistent smoke profile", "Convenient—ready to cook or eat", "Farm‑raised for traceable quality"],
@@ -71,7 +84,7 @@ const ProductsPage = () => {
       name: "Table‑Size Catfish (1 kg)",
       price: "₦2,800 per kg",
       category: "Aquaculture",
-      image: "https://images.unsplash.com/photo-1514944651163-f272645f867c?q=80&w=500",
+      image: TableCatFish,
       shortDesc: "Fresh, firm table‑size catfish—ideal for pepper soup, grilling, and stews.",
       fullDesc: "Harvested to order for local deliveries, our table‑size catfish offers firm texture and clean flavour. Available whole or dressed (on request) for homes, restaurants, and retailers.",
       highlights: ["Fresh harvest, firm texture", "Great for grilling, pepper soup, oven roasting", "Available whole or dressed (by request)"],
@@ -82,7 +95,7 @@ const ProductsPage = () => {
       name: "Catfish Broodstock",
       price: "Price on Request",
       category: "Aquaculture",
-      image: "https://images.unsplash.com/photo-1524704659690-3f7a3fe19bb7?q=80&w=500",
+      image: CatFishBroodstock,
       shortDesc: "Healthy catfish broodstock selected for breeding performance—sold per kg to support predictable hatchery outcomes.",
       fullDesc: "Our broodstock are chosen for vigour and consistency. Sourced from well‑managed ponds and handled with biosecurity in mind, they support reliable hatchery performance.",
       highlights: ["Performance‑oriented selection", "Health and biosecurity focused", "Traceable farm records (on request)"],
@@ -93,7 +106,7 @@ const ProductsPage = () => {
       name: "Catfish Juveniles (8 cm)",
       price: "₦50 each",
       category: "Aquaculture",
-      image: "https://images.unsplash.com/photo-1615147342761-9238e15d8b96?q=80&w=500",
+      image: CatFishJuveniles,
       shortDesc: "Vigorous catfish juveniles (8 cm) with consistent grading for predictable grow‑out and feed efficiency.",
       fullDesc: "Raised under clean nursery conditions, our 8 cm juveniles give farmers the uniformity needed for growth tracking and FCR performance. Acclimatisation guidance is provided to help you start strong.",
       highlights: ["8 cm size for consistent stocking", "Clean nursery and grading", "Acclimatisation guidance available"],
@@ -104,7 +117,7 @@ const ProductsPage = () => {
       name: "Premium Dressed Chicken",
       price: "₦4,500 – ₦6,000 per kg",
       category: "Poultry",
-      image: "https://images.unsplash.com/photo-1606728035253-49e196711486?q=80&w=500",
+      image: FrozenChicken,
       shortDesc: "Clean, dressed chicken, processed hygienically and frozen to preserve freshness—ready for home cooking or food service.",
       fullDesc: "Our dressed chicken is processed in a clean environment, quickly chilled and frozen to lock in flavour and safety. Convenient for grills, stews, roasts, and catering orders.",
       highlights: ["Frozen for freshness and safety", "Consistent weight and clean dressing", "Reliable supply for homes and hospitality"],
@@ -115,7 +128,7 @@ const ProductsPage = () => {
       name: "Custom-Formulated Feeds",
       price: "Price on Request",
       category: "Feeds",
-      image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=500",
+      image: Feeds,
       shortDesc: "Balanced fish and poultry feeds, produced to farm specifics: species, life stage, target FCR, pellet size, and protein %.",
       fullDesc: "We formulate feeds for catfish, broilers, layers, and turkeys to match your production goals. Specify species, starter/grower/finisher, protein %, and pellet sizes.",
       highlights: ["Custom protein % and pellet sizes", "Supports uniform growth and FCR targets", "Suitable for farms and retail distribution"],
@@ -126,7 +139,7 @@ const ProductsPage = () => {
       name: "Seasonal Maize",
       price: "Price on Request",
       category: "Crops",
-      image: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=500",
+      image: SeasonalMaize,
       shortDesc: "Field‑fresh maize from our Nasarawa farms. Pricing and bag sizes available on request.",
       fullDesc: "Our maize is harvested seasonally to ensure maximum freshness for both feed production and direct consumption.",
       highlights: ["Farm-fresh quality", "Nasarawa origin", "Cleaned and sorted"]
@@ -136,7 +149,7 @@ const ProductsPage = () => {
       name: "Goat & Beef (Butchery)",
       price: "Price on Request",
       category: "Protein",
-      image: "https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=500",
+      image: ButcheredGoat,
       shortDesc: "Fresh goat and beef cuts processed to order. Cut options, lead time, and pricing available on request.",
       fullDesc: "Processed to order in a hygienic environment. Choose your specific cuts for household or commercial use.",
       highlights: ["Hygienic processing", "Processed to order", "Custom cut options"]
@@ -213,7 +226,6 @@ const ProductsPage = () => {
               <button
                 key={cat.name}
                 onClick={() => setActiveCategory(cat.name)}
-                // Changed flex-col to flex (row) and adjusted padding/margins
                 className={`flex items-center p-3 rounded-[2rem] transition-all border-2 text-left group h-full overflow-hidden ${
                   activeCategory === cat.name 
                   ? 'border-agro-green shadow-lg scale-105 ' + cat.bgColor 
