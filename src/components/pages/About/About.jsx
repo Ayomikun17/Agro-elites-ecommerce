@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react"; // Added useState
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Farmer from "../../../assets/farmer.jpg";
@@ -12,6 +12,14 @@ import FreshCrops from "../../../assets/fresh-crops.jpg";
 import ContactUs from "../../../assets/contact.jpg";
 
 const About = () => {
+  // Form State
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -19,6 +27,19 @@ const About = () => {
       easing: "ease-in-out",
     });
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleWhatsAppSubmit = (e) => {
+    e.preventDefault();
+    const companyPhone = "2348035138049";
+    const text = `Hello, My name is ${formData.fullName}, I would like to schedule a farm visit. ${formData.message}. Contact details: +234${formData.phone} and ${formData.email}`;
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/${companyPhone}?text=${encodedText}`, "_blank");
+  };
 
   const values = [
     {
@@ -420,13 +441,17 @@ const About = () => {
                 </h2>
               </div>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleWhatsAppSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">
                     Full Name
                   </label>
                   <input
                     type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     placeholder="Enter your full name"
                     className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-agro-green focus:ring-1 focus:ring-agro-green transition-all"
                   />
@@ -447,6 +472,10 @@ const About = () => {
                     </div>
                     <input
                       type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
                       placeholder="803 000 0000"
                       className="w-full px-6 py-4 rounded-r-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-agro-green focus:ring-1 focus:ring-agro-green transition-all"
                     />
@@ -459,6 +488,10 @@ const About = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     placeholder="your@email.com"
                     className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-agro-green focus:ring-1 focus:ring-agro-green transition-all"
                   />
@@ -469,13 +502,20 @@ const About = () => {
                     Message
                   </label>
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     rows="4"
                     placeholder="Tell us about your planned visit..."
                     className="w-full px-6 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-agro-green focus:ring-1 focus:ring-agro-green transition-all resize-none"
                   ></textarea>
                 </div>
 
-                <button className="w-full bg-agro-yellow text-agro-charcoal font-black uppercase tracking-widest py-5 rounded-xl hover:bg-agro-charcoal hover:text-white transition-all duration-300 shadow-lg shadow-agro-yellow/20 active:scale-95">
+                <button 
+                  type="submit"
+                  className="w-full bg-agro-yellow text-agro-charcoal font-black uppercase tracking-widest py-5 rounded-xl hover:bg-agro-charcoal hover:text-white transition-all duration-300 shadow-lg shadow-agro-yellow/20 active:scale-95"
+                >
                   Schedule Visit
                 </button>
               </form>

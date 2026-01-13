@@ -201,7 +201,7 @@ const ProductsPage = () => {
   const activeCategoryList = activeCategory === 'All' ? categoryData.filter(c => c.name !== 'All') : categoryData.filter(c => c.name === activeCategory);
 
   return (
-    <div id="products" className="bg-gray-50 min-h-screen py-16 px-6">
+    <div id="products" className="bg-gray-50 min-h-screen py-16 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
@@ -213,7 +213,7 @@ const ProductsPage = () => {
           </p>
         </div>
 
-        {/* Shop by Category Section - Side-by-Side Layout */}
+        {/* Shop by Category Section */}
         <div className="mb-24">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-black text-agro-charcoal">Shop by Category</h2>
@@ -223,8 +223,9 @@ const ProductsPage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categoryData.map((cat) => (
-              <button
+              <a
                 key={cat.name}
+                href={cat.name === 'All' ? '#products' : `#${cat.name.toLowerCase()}`}
                 onClick={() => setActiveCategory(cat.name)}
                 className={`flex items-center p-3 rounded-[2rem] transition-all border-2 text-left group h-full overflow-hidden ${
                   activeCategory === cat.name 
@@ -239,7 +240,7 @@ const ProductsPage = () => {
                   <p className="font-black text-agro-charcoal text-[13px] leading-tight mb-0.5">{cat.name}</p>
                   <p className="text-[10px] text-gray-500 font-bold leading-tight">{cat.desc}</p>
                 </div>
-              </button>
+              </a>
             ))}
           </div>
         </div>
@@ -251,7 +252,7 @@ const ProductsPage = () => {
             if (categoryProducts.length === 0) return null;
 
             return (
-              <div id={cat.name} key={cat.name} className="animate-in fade-in slide-in-from-bottom-6 duration-700">
+              <div id={cat.name.toLowerCase()} key={cat.name} className="animate-in fade-in slide-in-from-bottom-6 duration-700 scroll-mt-24">
                 <div className="flex items-center gap-6 mb-10">
                   <h2 className="text-3xl font-black text-agro-charcoal tracking-tight">{cat.name}</h2>
                   <div className="h-px bg-gray-200 w-full hidden md:block"></div>
@@ -264,7 +265,7 @@ const ProductsPage = () => {
           })}
         </div>
 
-        {/* Detail Modal with Linked Quantity State */}
+        {/* Modal Logic remains unchanged */}
         {selectedProduct && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
              <div className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[3.5rem] shadow-2xl relative animate-in zoom-in-95 duration-300">
@@ -294,7 +295,6 @@ const ProductsPage = () => {
                         ))}
                       </div>
                       
-                      {/* Modal Footer & Quantity */}
                       <div className="pt-6 border-t border-gray-100 space-y-4">
                         <div className="flex items-center justify-between bg-gray-50 p-3 rounded-2xl border border-gray-100">
                           <span className="text-[10px] uppercase font-black text-gray-400 ml-3 tracking-widest">Select Quantity</span>

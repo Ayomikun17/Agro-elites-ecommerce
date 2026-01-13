@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import logoIcon from "../../assets/logo2.png"; // Path to your logo icon
+import logoIcon from "../../assets/logo2.png";
+// Import Font Awesome components
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +35,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* MIDDLE: LINKS */}
+          {/* MIDDLE: LINKS (Desktop) */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
@@ -45,12 +48,11 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* RIGHT: SHOP NOW BUTTON WITH CART */}
+          {/* RIGHT: SHOP NOW BUTTON (Desktop) */}
           <div className="hidden md:block">
             <a href="#products">
               <button className="bg-agro-green hover:bg-agro-dark text-white px-5 py-2 rounded-full font-bold text-sm shadow-md transition-all active:scale-95 flex items-center gap-2 group">
                 <span>SHOP NOW</span>
-                {/* Shopping Cart SVG */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -69,72 +71,58 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* MOBILE BUTTON */}
+          {/* MOBILE BUTTON (Font Awesome) */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-agro-green p-2"
+              className="text-agro-green p-2 text-2xl focus:outline-none"
             >
-              <svg
-                className="h-7 w-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16"
-                  />
-                )}
-              </svg>
+              {isOpen ? (
+                <FontAwesomeIcon icon={faXmark} className="w-6 h-6" />
+              ) : (
+                <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU - Fixed to avoid pushing content */}
       <div
-        className={`md:hidden bg-white transition-all duration-300 ${
-          isOpen ? "max-h-screen border-t" : "max-h-0 overflow-hidden"
+        className={`absolute top-16 left-0 w-full bg-white shadow-xl transition-all duration-300 md:hidden z-40 ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"
         }`}
       >
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 border-t border-gray-100">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="block text-agro-charcoal font-bold text-lg"
+              onClick={() => setIsOpen(false)} // Close menu on click
+              className="block text-agro-charcoal font-bold text-lg hover:text-agro-green"
             >
               {link.name}
             </a>
           ))}
-          <button className="w-full bg-agro-green text-white py-3 rounded-xl font-black shadow-md flex justify-center items-center gap-2">
-            SHOP NOW
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-              />
-            </svg>
-          </button>
+          <a href="#products" onClick={() => setIsOpen(false)}>
+      <button className="w-full bg-agro-green text-white py-3 rounded-xl font-black shadow-md flex justify-center items-center gap-2 mt-4 transition-transform active:scale-95">
+        SHOP NOW
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      </button>
+    </a>
         </div>
       </div>
     </nav>

@@ -28,7 +28,7 @@ const Footer = () => {
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
     { name: "FAQ", href: "#faq" },
-    { name: "Shop", href: "/products" },
+    { name: "Shop", href: "#products" },
   ];
 
   const socialLinks = [
@@ -56,7 +56,6 @@ const Footer = () => {
                 AGRO-ELITES
               </span>
             </div>
-            {/* Increased from text-sm to text-base (16px) for the description */}
             <p className="text-green-50/80 text-base leading-relaxed">
               Premium farm-fresh produce and high-quality agricultural supplies.
               Bringing the best of the farm directly to your doorstep.
@@ -75,7 +74,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Shop Products Column - Font increased to 15px */}
+          {/* Shop Products Column - UPDATED LINKS */}
           <div>
             <h4 className="text-[15px] font-black uppercase tracking-widest mb-7 text-agro-yellow">
               Shop Products
@@ -84,7 +83,7 @@ const Footer = () => {
               {shopCategories.map((cat) => (
                 <li key={cat.slug}>
                   <a
-                    href={`/products?category=${cat.slug}`}
+                    href={`#${cat.slug}`}
                     className="hover:text-agro-yellow transition-all capitalize block"
                   >
                     {cat.name}
@@ -94,7 +93,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Column - Font increased to 15px */}
+          {/* Company Column */}
           <div>
             <h4 className="text-[15px] font-black uppercase tracking-widest mb-7 text-agro-yellow">
               Company
@@ -113,7 +112,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Column - Font increased to base (16px) */}
+          {/* Contact Column */}
           <div>
             <h4 className="text-[15px] font-black uppercase tracking-widest mb-7 text-agro-yellow">
               Get In Touch
