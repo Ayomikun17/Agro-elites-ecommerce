@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-agro-green: #4CAF50;
+  --color-agro-dark: #2E7D32;
+  --color-agro-yellow: #FBC02D;
+  --color-agro-charcoal: #333333;
+  
+  /* You can also define custom fonts here if needed */
+  --font-brand: "Montserrat", sans-serif;
+}
