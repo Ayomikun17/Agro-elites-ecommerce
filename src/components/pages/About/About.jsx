@@ -297,7 +297,7 @@ const About = () => {
                 className="rounded-[2.5rem] shadow-xl h-[400px] lg:h-[550px] w-full object-cover transform transition-transform duration-700 hover:scale-105"
                 alt="Modern Farmer"
               />
-              <div className="absolute bottom-6 right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100 animate-bounce-slow">
+              {/* <div className="absolute bottom-6 right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100 animate-bounce-slow">
                 <div className="bg-agro-green p-2 rounded-full text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -320,7 +320,7 @@ const About = () => {
                   </p>
                   <p className="text-[10px] text-gray-500">Certified Quality</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="order-1 lg:order-2" data-aos="fade-left">
